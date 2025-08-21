@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <h1 id="mainHeader">Welcome to Ollama based chat</h1>
+        <p>This chat is made for testing an Actor Model implementation with the Rust programming language.</p>
+        <div class="inputBar">
+            <form id="chatForm" class="inputForm" autocomplete="off">
+                <input type="text" id="userInput" placeholder="Ask anything">
+                <button id="sendButton">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="dist/index.js"></script>
+</body>
+</html>
