@@ -17,14 +17,16 @@ async fn main() -> std::io::Result<()> {
     }
     .start();
 
+    println!("Model actor started, binding to 0.0.0.0:8080...");
+
     HttpServer::new(move || {
         App::new()
             .app_data(web::Data::new(model_addr.clone()))
             .route("/api/chat", web::post().to(chat_endpoint))
             // Serve your static frontend (adjust path as needed)
-            .service(Files::new("/", "../frontend").index_file("index.html"))
+            .service(Files::new("/", "/app/frontend").index_file("index.html"))
     })
-    .bind(("127.0.0.1", 8080))?
+    .bind(("0.0.0.0", 80))?
     .run()
     .await
 }
